@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Updated primary to be similar to sky-500/blue-500 */
+    --primary: 199 89% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    /* Standard text colors */
+    --text-dark: 220 25% 10%;
+    --text-light: 220 15% 40%;
+    
+    /* Color for income/positive transactions */
+    --income: 142 76% 36%;
+    --income-foreground: 210 40% 98%;
+    
+    /* Color for expenses/negative transactions */
+    --expense: 0 84% 60%;
+    --expense-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 199 89% 50%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 199 89% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 199 89% 50%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Updated primary to be similar to sky-500/blue-500 */
+    --primary: 199 89% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Standard text colors for dark mode */
+    --text-dark: 220 15% 95%;
+    --text-light: 220 15% 70%;
+    
+    /* Color for income/positive transactions */
+    --income: 142 76% 45%;
+    --income-foreground: 0 0% 100%;
+    
+    /* Color for expenses/negative transactions */
+    --expense: 0 84% 60%;
+    --expense-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 199 89% 50%;
+    
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 199 89% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 199 89% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html, body {
+    @apply antialiased bg-white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-feature-settings: "rlig" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Modern typography improvements */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight text-text-dark;
+  }
+  
+  h1 {
+    @apply text-2xl font-bold;
+  }
+  
+  h2 {
+    @apply text-xl font-semibold;
+  }
+  
+  h3 {
+    @apply text-lg font-semibold;
+  }
+  
+  h4 {
+    @apply text-base font-medium;
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .transition-all-fast {
+    @apply transition-all duration-200 ease-in-out;
+  }
+  
+  .transition-all-medium {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .transition-transform-medium {
+    @apply transition-transform duration-300 ease-in-out;
+  }
+  
+  .hover-scale {
+    @apply hover:scale-102 transition-transform duration-200;
+  }
+
+  /* Standardized icon sizes and hover effects */
+  .icon-xs {
+    @apply h-3 w-3;
+  }
+  
+  .icon-sm {
+    @apply h-4 w-4;
+  }
+  
+  .icon-md {
+    @apply h-5 w-5;
+  }
+  
+  .icon-lg {
+    @apply h-6 w-6;
+  }
+  
+  .icon-hover {
+    @apply transition-transform duration-200 hover:scale-110;
+  }
+
+  .card-hover {
+    @apply hover:shadow-elevation-card transition-shadow duration-200;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* Color utilities for transactions */
+  .text-income {
+    @apply text-[hsl(var(--income))];
+  }
+  
+  .text-expense {
+    @apply text-[hsl(var(--expense))];
+  }
+  
+  .text-standard {
+    @apply text-[hsl(var(--text-dark))];
+  }
+  
+  .text-secondary {
+    @apply text-[hsl(var(--text-light))];
+  }
+  
+  /* Content padding utility */
+  .content-padding {
+    @apply px-4;
+  }
+  
+  /* Tooltip utilities */
+  .with-tooltip {
+    @apply relative inline-flex items-center;
+  }
+  
+  /* Mobile keyboard interaction utilities */
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom, 12px), var(--input-bottom-offset));
+  }
+}
